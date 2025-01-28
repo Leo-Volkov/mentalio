@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 /**
  * ModalWrapper - Компонент-обёртка для модального окна.
@@ -41,27 +41,24 @@ import PropTypes from 'prop-types';
  */
 
 const ModalWrapper = ({ isOpen, onClose, children }) => {
-	if (!isOpen) return null;
-	
-	return (
-		<div
-			className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50`}
-			onClick={onClose}
-		>
-			<div
-				className="relative bg-white rounded-lg shadow-lg p-3 sm:p-6 w-[75%] sm:w-auto md:max-w-[75%] md:max-h-[75vh] xs:max-w-[90%] xs:max-h-[90%] overflow-y-auto"
-				onClick={(e) => e.stopPropagation()} // Предотвращает закрытие при клике на контент
-			>
-				{children}
-			</div>
-		</div>
-	);
-};
+  if (!isOpen) return null
+
+  return (
+    <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50`} onClick={onClose}>
+      <div
+        className="relative bg-white rounded-lg shadow-lg p-3 sm:p-6 w-[75%] sm:w-auto md:max-w-[75%] md:max-h-[75vh] xs:max-w-[90%] xs:max-h-[90%] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()} // Предотвращает закрытие при клике на контент
+      >
+        {children}
+      </div>
+    </div>
+  )
+}
 
 ModalWrapper.propTypes = {
-	isOpen: PropTypes.bool.isRequired, // Управление видимостью
-	onClose: PropTypes.func.isRequired, // Функция закрытия
-	children: PropTypes.node.isRequired, // Контент модального окна
-};
+  isOpen: PropTypes.bool.isRequired, // Управление видимостью
+  onClose: PropTypes.func.isRequired, // Функция закрытия
+  children: PropTypes.node.isRequired, // Контент модального окна
+}
 
-export default ModalWrapper;
+export default ModalWrapper

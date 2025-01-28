@@ -9,11 +9,11 @@ import Cookies from 'js-cookie'
 
 // Создание базового экземпляра Axios с настройками
 const axiosInstance = axios.create({
-	baseURL: 'https://mentalio.pythonanywhere.com', // Базовый URL для всех запросов
-	timeout: 10000, // Тайм-аут запросов (10 секунд)
-	headers: {
-		'Content-Type': 'application/json', // Устанавливаем тип содержимого для всех запросов
-	},
+  baseURL: 'https://mentalio.pythonanywhere.com', // Базовый URL для всех запросов
+  timeout: 10000, // Тайм-аут запросов (10 секунд)
+  headers: {
+    'Content-Type': 'application/json', // Устанавливаем тип содержимого для всех запросов
+  },
 })
 
 /**
@@ -25,17 +25,17 @@ const axiosInstance = axios.create({
  * @returns {object} Модифицированная конфигурация запроса.
  */
 axiosInstance.interceptors.request.use(
-	(config) => {
-		const token = Cookies.get('token') // Получение токена из cookies
-		if (token) {
-			config.headers.Authorization = `Bearer ${token}` // Добавление токена в заголовок Authorization
-		}
-		return config
-	},
-	(error) => {
-		// Обработка ошибок при создании запроса
-		return Promise.reject(error)
-	}
+  (config) => {
+    const token = Cookies.get('token') // Получение токена из cookies
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}` // Добавление токена в заголовок Authorization
+    }
+    return config
+  },
+  (error) => {
+    // Обработка ошибок при создании запроса
+    return Promise.reject(error)
+  },
 )
 
 /**
@@ -50,32 +50,32 @@ axiosInstance.interceptors.request.use(
  * @throws {string|object} Сообщение об ошибке или данные ошибки.
  */
 axiosInstance.interceptors.response.use(
-	(response) => {
-		return response // Возвращаем только данные ответа
-	},
-	(error) => {
-		console.log('error', error)
-		if (error.response) {
-			// Обработка ошибок, пришедших от сервера
-			const {status} = error.response
-			if (status === 401) {
-				// Действия при ошибке 401 (неавторизованный доступ)
-				Cookies.remove('token') // Удаление токена из cookies
-				if (window.location.pathname !== '/auth/login') {
-					window.location.href = '/auth/login' // Редирект на страницу авторизации
-				}
-			}
-		} else if (error.request) {
-			// Ошибка запроса (нет ответа от сервера)
-			console.error('Нет ответа от сервера: ', error.request)
-		} else {
-			// Ошибка в конфигурации запроса
-			console.error('Ошибка конфигурации запроса: ', error.message)
-		}
-		
-		// Возврат сообщения об ошибке
-		return error.response
-	}
+  (response) => {
+    return response // Возвращаем только данные ответа
+  },
+  (error) => {
+    console.log('error', error)
+    if (error.response) {
+      // Обработка ошибок, пришедших от сервера
+      const { status } = error.response
+      if (status === 401) {
+        // Действия при ошибке 401 (неавторизованный доступ)
+        Cookies.remove('token') // Удаление токена из cookies
+        if (window.location.pathname !== '/auth/login') {
+          window.location.href = '/auth/login' // Редирект на страницу авторизации
+        }
+      }
+    } else if (error.request) {
+      // Ошибка запроса (нет ответа от сервера)
+      console.error('Нет ответа от сервера: ', error.request)
+    } else {
+      // Ошибка в конфигурации запроса
+      console.error('Ошибка конфигурации запроса: ', error.message)
+    }
+
+    // Возврат сообщения об ошибке
+    return error.response
+  },
 )
 
 export default axiosInstance

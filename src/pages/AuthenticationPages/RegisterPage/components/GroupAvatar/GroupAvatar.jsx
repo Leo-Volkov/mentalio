@@ -1,46 +1,44 @@
 import React from 'react'
-import test from "/images/test.jpg"
+import test from '/images/test.jpg'
 import PropTypes from 'prop-types'
-import SliderAvatarOnPhone from '../../../UI/SliderAvatarOnPhone/SliderAvatarOnPhone'
-const GroupAvatar = ({avatar, handleAvatarSelect, isError }) => {
+import SliderAvatarOnPhone from '../../../UI/SliderAvatarOnPhone/SliderAvatarOnPhone.jsx'
+const GroupAvatar = ({ avatar, handleAvatarSelect, isError }) => {
   return (
     <>
       <div className="w-[95%] mx-auto 2xl:mx-0 2xl:w-full mt-[2.5rem]">
         <div className="text-[2rem] sm:text-[48px] font-[600] mb-[40px]">Выберите своего аватара</div>
         <div className="hidden sm:flex items-center flex-wrap sm:flex-nowrap gap-[0.625rem] md:gap-[40px]">
           {avatar.map((item, index) => (
-            <div 
-              className="w-full sm:w-[500px] h-[25rem] sm:h-[600px] rounded-[20px] truncate cursor-pointer" 
+            <div
+              className="w-full sm:w-[500px] h-[25rem] sm:h-[600px] rounded-[20px] truncate cursor-pointer"
               key={index}
               onClick={() => handleAvatarSelect(item.id)}
-              style={{ border: item.chosen ? "2px solid green" : "none" }}
+              style={{ border: item.chosen ? '2px solid green' : 'none' }}
             >
-              <img 
+              <img
                 src={test}
                 // src={item.avatar}
-                alt={"avatar " + item.id}
-                className='w-full h-full object-cover'
+                alt={'avatar ' + item.id}
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
         </div>
 
         {/* Mobile */}
-        {
-          window.innerWidth < 576 &&
-          <SliderAvatarOnPhone
-            avatar={avatar}
-            handleAvatarSelect={handleAvatarSelect}
-          />
-        }
+        {window.innerWidth < 576 && <SliderAvatarOnPhone avatar={avatar} handleAvatarSelect={handleAvatarSelect} />}
       </div>
-      {isError &&
-        (<div className="Error__text">
-          <p className="
+      {isError && (
+        <div className="Error__text">
+          <p
+            className="
           text-[#FF0000] text-[12px] sm:text-[16px] font-[400] mt-[20px]
-         ">Выберите один из аватаров</p>
-        </div>)
-      }
+         "
+          >
+            Выберите один из аватаров
+          </p>
+        </div>
+      )}
     </>
   )
 }
@@ -48,7 +46,7 @@ const GroupAvatar = ({avatar, handleAvatarSelect, isError }) => {
 GroupAvatar.propTypes = {
   avatar: PropTypes.array.isRequired,
   handleAvatarSelect: PropTypes.func.isRequired,
-  isError: PropTypes.bool.isRequired
+  isError: PropTypes.bool.isRequired,
 }
 
 export default GroupAvatar
