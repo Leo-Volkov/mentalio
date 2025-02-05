@@ -1,5 +1,4 @@
 import React from 'react'
-import ButtonAuthCommon from '../../../UI/ButtonAuthCommon/ButtonAuthCommon.jsx'
 
 const GroupTutorial = () => {
   const dataVideo = ['', '', '']

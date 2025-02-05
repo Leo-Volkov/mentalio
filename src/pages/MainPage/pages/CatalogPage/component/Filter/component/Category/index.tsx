@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import * as React from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+// @ts-ignore
 import { setCategory } from '../../../../store/catalogSlice.js'
 import { CategoryItem } from './component/CategoryItem'
+// @ts-ignore
 import { getAllCategoriesThunk } from '../../../../store/catalogThunks.js'
 
 export const Category: React.FC = () => {
@@ -10,6 +13,7 @@ export const Category: React.FC = () => {
   const [selectedCatalog, setSelectedCatalog]: any = useState(null)
 
   useEffect(() => {
+    // @ts-ignore
     dispatch(getAllCategoriesThunk())
   }, [])
 
@@ -17,10 +21,12 @@ export const Category: React.FC = () => {
   const handleCategorySelect = (value: string) => {
     if (selectedCatalog === value) {
       setSelectedCatalog(null)
-      dispatch(setCategory(null)) // Устанавливаем выбранную категорию
+      // @ts-ignore
+      dispatch(setCategory(null))
     } else {
       setSelectedCatalog(value)
-      dispatch(setCategory(value)) // Устанавливаем выбранную категорию
+      // @ts-ignore
+      dispatch(setCategory(value))
     }
   }
 

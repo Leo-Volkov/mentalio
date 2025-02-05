@@ -5,11 +5,11 @@ import Register from '../pages/AuthenticationPages/RegisterPage/Register.jsx'
 import PasswordReset from '../pages/AuthenticationPages/PasswordResetPage/PasswordReset.jsx'
 import Main from '../pages/MainPage/Main.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
-import HomePage from '../../frontend/src/pages/MainPage/pages/HomePage/HomePage.jsx'
-import { MyFoldersPage } from '../../frontend/src/pages/MainPage/pages/MyFoldersPage/index.js'
-import CatalogPage from '../../frontend/src/pages/MainPage/pages/CatalogPage/CatalogPage.jsx'
-import SearchByTagsPage from '../../frontend/src/pages/MainPage/pages/SearchByTagsPage/SearchByTagsPage.jsx'
-import SettingPage from '../../frontend/src/pages/MainPage/pages/SettingPage/SettingPage.jsx'
+import HomePage from '@/pages/MainPage/pages/HomePage/HomePage.jsx'
+import { MyFoldersPage } from '@/pages/MainPage/pages/MyFoldersPage/index.tsx'
+import CatalogPage from '@/pages/MainPage/pages/CatalogPage/CatalogPage.jsx'
+import SearchByTagsPage from '@/pages/MainPage/pages/SearchByTagsPage/SearchByTagsPage.jsx'
+import SettingPage from '@/pages/MainPage/pages/SettingPage/SettingPage.jsx'
 
 const AppRoutes = () => {
   return (

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { handlePending, handleRejected } from '../../../../../../../src/store/helpers/Handlers.js'
+import { handlePending, handleRejected } from '@/store/helpers/Handlers.js'
 import { getAllCategoriesThunk, paginationNextPageThunk, paginationThunk } from './catalogThunks.js'
 
 const initialState = {
@@ -52,8 +52,8 @@ const catalogSlice = createSlice({
       .addCase(paginationThunk.pending, handlePending) // Флаг загрузки
       .addCase(paginationThunk.fulfilled, (state, action) => {
         state.loading = false // Завершаем загрузку
-        state.carts = [...action.payload.items] // Обновляем список карточек
-        state.totalPage = Math.ceil(action.payload.countTotalCarts / state.limit) // Пересчитываем общее количество страниц
+        state.carts = [...action.payload?.items] // Обновляем список карточек
+        state.totalPage = Math.ceil(action.payload?.countTotalCarts / state.limit) // Пересчитываем общее количество страниц
       })
       .addCase(paginationThunk.rejected, handleRejected) // Обработка ошибки
 
@@ -62,7 +62,7 @@ const catalogSlice = createSlice({
       .addCase(getAllCategoriesThunk.pending, handlePending) // Флаг загрузки
       .addCase(getAllCategoriesThunk.fulfilled, (state, action) => {
         state.loading = false // Завершаем загрузку
-        state.allCategories = [...action.payload.allCategories] // Обновляем список категорий
+        state.allCategories = [...action.payload?.allCategories] // Обновляем список категорий
       })
       .addCase(getAllCategoriesThunk.rejected, handleRejected) // Обработка ошибки
 
@@ -71,7 +71,7 @@ const catalogSlice = createSlice({
       .addCase(paginationNextPageThunk.pending, handlePending) // Флаг загрузки
       .addCase(paginationNextPageThunk.fulfilled, (state, action) => {
         state.loading = false // Завершаем загрузку
-        state.carts = [...state.carts, ...action.payload.items] // Добавляем новые карточки к текущему списку
+        state.carts = [...state.carts, ...action.payload?.items] // Добавляем новые карточки к текущему списку
         state.totalPage -= 1 // Уменьшаем общее количество оставшихся страниц
         state.page += 1 // Увеличиваем номер текущей страницы
       })

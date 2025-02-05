@@ -4,8 +4,7 @@ import PaginationItem from '@mui/material/PaginationItem'
 import Stack from '@mui/material/Stack'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import Button from '../../../../../../../../src/pages/MainPage/UI/Button'
-import { setPage } from '../../store/catalogSlice.js'
+import Button from '@/pages/MainPage/UI/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { paginationNextPageThunk, paginationThunk } from '../../store/catalogThunks.js'
 
@@ -16,7 +15,7 @@ function Index({}) {
 
   const handleOnClickNextPage = () => {
     dispatch(paginationNextPageThunk({ query, page: page - 1, category, limit }))
-    console.log('Pagination: ', { query, page: page - 1, category, limit })
+    console.log('Pagination: ', { query, page: page, category, limit })
   }
   return (
     <div
@@ -45,8 +44,8 @@ function Index({}) {
         <Pagination
           count={totalPage}
           onChange={(e, num) => {
-            dispatch(paginationThunk({ query, page: num - 1, category, limit }))
-            console.log('Pagination: ', { query, page: num - 1, category, limit })
+            dispatch(paginationThunk({ query, page: num, category, limit }))
+            console.log('Pagination: ', { query, page: num, category, limit })
           }}
           renderItem={(item) => <PaginationItem slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }} {...item} />}
         />

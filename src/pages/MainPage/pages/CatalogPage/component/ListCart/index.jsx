@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import FolderDirectory from '../../../../components/FolderDirectory/FolderDirectory.jsx'
-import { useSelector } from 'react-redux'
 
 ListCart.propTypes = {
   carts: PropTypes.array,

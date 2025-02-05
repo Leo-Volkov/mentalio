@@ -1,3 +1,4 @@
+// @ts-ignore
 import happy_folder from './assets/happy_folders.png'
 
 import { Link } from 'react-router'

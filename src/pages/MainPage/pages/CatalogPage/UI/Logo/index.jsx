@@ -1,9 +1,8 @@
 import React from 'react'
-import logoURL from '/images/logo.svg'
+import { logo } from '@images'
 
 const Logo = () => {
-  // Логотип
-  return <img src={logoURL} alt="Логотип Mentalio" className="w-full h-full object-cover" />
+  return <img src={logo} alt="Логотип Mentalio" className="w-full h-full object-cover" />
 }
 
 export default Logo

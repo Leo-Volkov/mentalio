@@ -4,13 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "frontend/node_modules/.bin/vite --host",
-    "build": "frontend/node_modules/.bin/vite build",
-    "lint": "frontend/node_modules/.bin/eslint ..",
+    "dev": "vite --host",
+    "build": "vite build",
+    "lint": "prettier --write . && eslint .",
     "test": "jest",
-    "preview": "frontend/node_modules/.bin/vite preview --host",
-    "type-check": "frontend/node_modules/.bin/tsc --noEmit",
-    "pretter": "frontend/node_modules/.bin/prettier --write ."
+    "preview": "vite preview --host",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -34,6 +33,7 @@
     "react-router-dom": "^7.1.0",
     "redux-persist": "^6.0.0",
     "swiper": "^11.1.15",
+    "vite-tsconfig-paths": "^5.1.4",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -63,7 +63,8 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.21.0",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "scarfSettings": {
     "enabled": false

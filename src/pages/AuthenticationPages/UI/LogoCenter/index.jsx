@@ -1,8 +1,7 @@
 import React from 'react'
-import logo from '/images/logo.svg'
+import { logo } from '@images'
 
 const LogoCenter = () => {
-  // Логотип в центре экрана для страницы аутентификации
   return <img src={logo} alt="Логотип" className="mx-auto" />
 }
 

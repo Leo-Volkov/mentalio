@@ -1,7 +1,8 @@
 import React from 'react'
-import test from '/images/test.jpg'
+import { test } from '@/shared/images'
 import PropTypes from 'prop-types'
 import SliderAvatarOnPhone from '../../../UI/SliderAvatarOnPhone/SliderAvatarOnPhone.jsx'
+
 const GroupAvatar = ({ avatar, handleAvatarSelect, isError }) => {
   return (
     <>

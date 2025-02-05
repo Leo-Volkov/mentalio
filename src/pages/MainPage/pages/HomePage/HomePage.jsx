@@ -4,7 +4,7 @@ import NonEmptyFolder from '../../components/NonEmptyFolder/NonEmptyFolder'
 import { Link } from 'react-router'
 import ListCart from '../CatalogPage/component/ListCart'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserFiles } from '../../../../../../src/store/features/userFiles/userFilesThunks.js'
+import { getUserFiles } from '@/store/features/userFiles/userFilesThunks.js'
 
 const HomePage = () => {
   const dispatch = useDispatch()

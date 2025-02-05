@@ -6,7 +6,7 @@ import authReducer from './features/auth/authSlice.js'
 import userFilesSlice from './features/userFiles/userFilesSlice.js'
 import publicFilesSlice from './features/publicFiles/publicFilesSlice.js'
 import analyticsSlice from './features/analytics/analyticsSlice.js'
-import catalogSlice from '../../frontend/src/pages/MainPage/pages/CatalogPage/store/catalogSlice.js'
+import catalogSlice from '../../src/pages/MainPage/pages/CatalogPage/store/catalogSlice.js'
 
 const persistConfig = {
   key: 'root',

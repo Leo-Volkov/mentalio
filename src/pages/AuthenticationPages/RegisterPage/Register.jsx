@@ -1,32 +1,28 @@
-// Register.jsx
-// Основной компонент регистрации. Управляет уровнями процесса регистрации и использует хуки для переходов и пользовательского ввода.
 import React, { useState, useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ButtonAuthCommon from '../UI/ButtonAuthCommon/ButtonAuthCommon.jsx'
 import { useSwitchRenderLevel } from './components/useSwitchRenderLevel.jsx'
 import { useAvatarSelection, useQuestions } from './hooks/useManageSelection.js'
 import { useFormik_Register, handleNext } from './hooks/useManageTransition.js'
-import { clearError } from '../../../store/features/auth/authSlice.js'
-import { fetchQuestions } from '../../../store/features/analytics/analyticsThunks.js'
-import { toggleQuestionAnswer } from '../../../store/features/analytics/analyticsSlice.js'
+import { clearError } from '@/store/features/auth/authSlice.js'
+import { fetchQuestions } from '@/store/features/analytics/analyticsThunks.js'
+import { toggleQuestionAnswer } from '@/store/features/analytics/analyticsSlice.js'
 import Index from '../UI/LogoCenter/index.jsx'
 
 function Register() {
-  // Состояние для отслеживания текущего уровня процесса регистрации.
   const [level, setLevel] = useState(0)
   const dispatch = useDispatch()
   const [password, setPassword] = useState('')
   const [login, setlogin] = useState('')
-  // Доступ к состояниям загрузки и ошибок из Redux-хранилища.
   const { isLoading, error } = useSelector((state) => state.auth)
   const { questions, loadingAnalytics, errorAnalytics } = useSelector((state) => state.analytics)
 
   const [isError, setIsError] = useState(false)
 
   useEffect(() => {
-    // Очищаем ошибку при монтировании компонента
     dispatch(clearError())
   }, [level])
+
   useEffect(() => {
     dispatch(
       fetchQuestions([

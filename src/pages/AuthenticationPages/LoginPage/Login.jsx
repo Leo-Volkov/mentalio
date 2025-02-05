@@ -5,12 +5,10 @@ import './Login.css'
 import InputAuthCommon from '../UI/InputAuthCommon/InputAuthCommon.jsx'
 import ButtonAuthCommon from '../UI/ButtonAuthCommon/ButtonAuthCommon.jsx'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginUserThunk } from '../../../store/features/auth/authThunks.js'
-import { loginSchema } from '../../../../validationSchemas.js'
+import { loginUserThunk } from '@/store/features/auth/authThunks.js'
+import { loginSchema } from '@/../validationSchemas.js'
 import LogoCenter from '../UI/LogoCenter/index.jsx'
 import TextError from '../UI/TextError/TextError.jsx'
-
-// import {clearError} from '../../../store/authSlice.js'
 
 function Login() {
   const dispatch = useDispatch()

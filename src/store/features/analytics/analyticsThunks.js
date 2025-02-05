@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
+import axios from '../../../../axiosConfig.ts'
 
 export const fetchQuestions = createAsyncThunk('analytics/fetchQuestions', async (initial, { rejectWithValue }) => {
   try {

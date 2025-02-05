@@ -1,6 +1,5 @@
-// AsyncThunk для входа пользователя
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from '../../../../axiosConfig.js'
+import axios from '../../../../axiosConfig.ts'
 import Cookies from 'js-cookie'
 
 export const loginUserThunk = createAsyncThunk('auth/loginUserThunk', async (credentials, { rejectWithValue }) => {

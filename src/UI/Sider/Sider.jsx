@@ -1,5 +1,5 @@
 import React from 'react'
-import test from '/images/test.jpg'
+import { test } from '@/shared/images/index'
 import SiderMenu from './components/SiderMenu/SiderMenu.jsx'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import PropTypes from 'prop-types'

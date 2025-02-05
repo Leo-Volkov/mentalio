@@ -1,5 +1,3 @@
-// useSwitchRenderLevel.jsx
-// Хук для отрисовки различных UI-компонентов в зависимости от текущего уровня регистрации.
 import React, { useMemo } from 'react'
 import InputAuthCommon from '../../UI/InputAuthCommon/InputAuthCommon.jsx'
 import GroupAvatar from './GroupAvatar/GroupAvatar.jsx'

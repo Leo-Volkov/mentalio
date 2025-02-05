@@ -1,8 +1,3 @@
-// useManageSelection.js
-import { useMemo, useState } from 'react'
-import axios from 'axios'
-
-// Хук для управления выбором аватара.
 /**
  * Хук для управления выбором аватара.
  *

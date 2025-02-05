@@ -1,5 +1,5 @@
 import { http, HttpResponse } from 'msw'
-import axios from '../../../axiosConfig.js'
+import axios from '../../../axiosConfig.ts'
 
 const URL = axios.defaults.baseURL
 

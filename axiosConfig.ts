@@ -27,9 +27,11 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = Cookies.get('token') // Получение токена из cookies
+    console.log('token', token)
     if (token) {
-      config.headers.Authorization = `Bearer ${token}` // Добавление токена в заголовок Authorization
+      config.headers.Authorization = `${token}` // Добавление токена в заголовок Authorization
     }
+    console.log('config', config)
     return config
   },
   (error) => {
@@ -58,13 +60,15 @@ axiosInstance.interceptors.response.use(
     if (error.response) {
       // Обработка ошибок, пришедших от сервера
       const { status } = error.response
-      if (status === 401) {
-        // Действия при ошибке 401 (неавторизованный доступ)
-        Cookies.remove('token') // Удаление токена из cookies
-        if (window.location.pathname !== '/auth/login') {
-          window.location.href = '/auth/login' // Редирект на страницу авторизации
-        }
-      }
+      // if (status === 401) {
+      //   // Действия при ошибке 401 (неавторизованный доступ)
+      //   Cookies.remove('token') // Удаление токена из cookies
+      //   if (window.location.pathname !== '/auth/login') {
+      //     window.location.href = '/auth/login' // Редирект на страницу авторизации
+      //   }
+      // }
+      console.log('Ошибка сервера:', error.response.data)
+      console.log('Статус:', status)
     } else if (error.request) {
       // Ошибка запроса (нет ответа от сервера)
       console.error('Нет ответа от сервера: ', error.request)

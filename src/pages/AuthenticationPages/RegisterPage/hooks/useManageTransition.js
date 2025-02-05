@@ -1,10 +1,9 @@
-// useManageTransition.js
 // Хук для управления переходами и отправкой формы.
-import { passwordSchema, emailOrPhoneSchema } from '../../../../../validationSchemas.js'
+import { passwordSchema, emailOrPhoneSchema } from '@/../validationSchemas.js'
 import { useFormik } from 'formik'
 import { useMemo } from 'react'
 
-import { checkLoginThunk, registerUserThunk } from '../../../../store/features/auth/authThunks.js'
+import { checkLoginThunk, registerUserThunk } from '@/store/features/auth/authThunks.js'
 
 /**
  * Переход на следующий уровень регистрации.

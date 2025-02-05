@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../../../UI/Logo'
-import InputText from '../../../UI/InputText'
+import InputText from '../../../UI/InputText/index.tsx'
 import { setQuery } from '../../../store/catalogSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
 

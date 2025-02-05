@@ -30,7 +30,7 @@ SiderMenuItem.propTypes = {
   subtitle: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  imageActive: PropTypes.string.isRequired,
+  imageActive: PropTypes.string,
   inDevelopment: PropTypes.bool,
 }
 

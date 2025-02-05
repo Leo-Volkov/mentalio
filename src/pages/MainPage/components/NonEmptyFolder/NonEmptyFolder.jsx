@@ -1,8 +1,7 @@
 import React from 'react'
-import happy_folder from '/images/happy_folders.png'
+import { happy_folders, sad_folders } from '@/shared/images'
 import { Link } from 'react-router'
 import Folder from './UI/Folder/Folder'
-import sad_folder from '/images/sad_folders.png'
 import ButtonAddFolderPlus from '../../UI/ButtonAddFolderPlus/ButtonAddFolderPlus'
 
 const NonEmptyFolder = ({ files }) => {
@@ -14,7 +13,7 @@ const NonEmptyFolder = ({ files }) => {
           <h3 className="text-[32px] font-bold mb-[15px]">Добавить папку</h3>
 
           <div className="w-[210px] h-[102px] rounded-[15px] bg-[#D1FFBAE5] flex items-center justify-center relative">
-            <img src={happy_folder} alt="" className="w-[130px] h-[80px] object-contain" />
+            <img src={happy_folders} alt="" className="w-[130px] h-[80px] object-contain" />
 
             {/* кнопка для добавления новую папку */}
             <ButtonAddFolderPlus />
@@ -42,7 +41,7 @@ const NonEmptyFolder = ({ files }) => {
           {/* появляется на телефоне */}
           <div className="block lg:hidden w-fit relative mt-[15px] mx-auto">
             <div className="w-[127px] sm:w-[200px] h-[77px] xs:h-[110px] truncate">
-              <img src={sad_folder} alt="" className="w-full h-full object-contain" />
+              <img src={sad_folders} alt="" className="w-full h-full object-contain" />
             </div>
 
             {/* кнопка для добавления новую папку */}

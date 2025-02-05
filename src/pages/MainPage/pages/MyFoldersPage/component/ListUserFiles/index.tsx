@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { UserFolder } from '../../UI/UserFolder'
 
 interface IListUserFiles {

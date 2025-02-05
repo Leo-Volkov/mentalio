@@ -1,6 +1,5 @@
-// store/catalogThunks.js
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import axios from '../../../../../../../axiosConfig.js'
+import axios from '../../../../../../axiosConfig.ts'
 
 /**
  * Асинхронный экшен для загрузки карточек для текущей страницы.
@@ -33,10 +32,10 @@ export const paginationThunk = createAsyncThunk('catalog/PaginationThunk', async
     },
   }
   try {
-    // const res = await axios.get('/catalog', {
-    // 	params: { query, page, category, userName, limit },
-    // });
-    // console.log(res.data)
+    const res = await axios.get('/catalog', {
+      params: { query, page, category, userName, limit },
+    })
+    console.log(res.data)
     return res.data
   } catch (e) {
     console.error(e)

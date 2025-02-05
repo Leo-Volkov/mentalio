@@ -3,6 +3,7 @@ import './InputAuthCommon.css'
 import PropTypes from 'prop-types'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
 import TextError from '../TextError/TextError.jsx'
+
 const InputAuthCommon = ({ id, name, type = 'text', placeholder = '', value, onChange, onBlur, error, touched, label, ...props }) => {
   const [showPassword, setShowPassword] = useState(false)
 

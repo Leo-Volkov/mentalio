@@ -1,12 +1,10 @@
 import React from 'react'
-import test from '/images/test.jpg'
-// Import Swiper React components
+import { test } from '@/shared/images'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
+
 const SliderAvatarOnPhone = ({ avatar, handleAvatarSelect }) => {
-  // swiper library for slider
   return (
     <>
       <Swiper slidesPerView={1.07} spaceBetween={10} className="mySwiper">
@@ -21,7 +19,6 @@ const SliderAvatarOnPhone = ({ avatar, handleAvatarSelect }) => {
             />
           </SwiperSlide>
         ))}
-        {/* item 1 */}
       </Swiper>
     </>
   )

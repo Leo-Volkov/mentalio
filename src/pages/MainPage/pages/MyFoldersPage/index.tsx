@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import * as React from 'react'
+import { useEffect } from 'react'
 import { ListUserFiles } from './component/ListUserFiles'
 
-// @ts-ignore
-import ButtonAddFolderPlus from '../../../../../../src/pages/MainPage/UI/ButtonAddFolderPlus/ButtonAddFolderPlus'
+import ButtonAddFolderPlus from '../../UI/ButtonAddFolderPlus/ButtonAddFolderPlus.jsx'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserFiles } from '../../../../../../src/store/features/userFiles/userFilesThunks.js'
+import { getUserFiles } from '@/store/features/userFiles/userFilesThunks'
 
 export const MyFoldersPage = () => {
   const dispatch = useDispatch()

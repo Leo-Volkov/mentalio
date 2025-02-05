@@ -19,7 +19,7 @@ async function enableMocking() {
   const IS_MOCKING = false
 
   if (IS_MOCKING) {
-    const { worker } = await import('./AppTest/mocks/browser.js')
+    const { worker } = await import('./appTest/mocks/browser.js')
     return worker.start()
   }
 }
