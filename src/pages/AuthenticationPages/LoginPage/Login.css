@@ -1,4 +1,4 @@
-.background{
+.background {
   min-height: 100vh;
   background: #212121;
   color: #fff;
@@ -11,31 +11,31 @@
   text-align: center;
 } */
 
-.group{
+.group {
   width: 490px;
   margin: 0 auto;
   margin-top: 147px;
 }
 
-.title{
+.title {
   font-size: 48px;
   font-weight: 600;
   margin-bottom: 40px;
 }
 
-.subTitle{
+.subTitle {
   font-size: 20px;
   font-weight: 400;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.subTitle a{
-  color: #00C724;
+.subTitle a {
+  color: #00c724;
   text-decoration: none;
 }
 
-.boundary{
+.boundary {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -43,26 +43,26 @@
   margin-bottom: 20px;
 }
 
-.boundary span{
+.boundary span {
   flex: 1;
   background: #ffffff2e;
   height: 1px;
 }
 
-.formGroupInput{
+.formGroupInput {
   margin-bottom: 20px;
 }
 
-.formGroupBtn{
+.formGroupBtn {
   margin-top: 20px;
 }
 
-.forgotPassword{
+.forgotPassword {
   text-align: left;
   margin-top: 10px;
 }
 
 .forgotPassword a {
-  color: #00C724;
+  color: #00c724;
   text-decoration: none;
 }
